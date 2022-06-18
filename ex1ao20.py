@@ -64,7 +64,7 @@ metros = 70
 km = metros * 3.6
 print(f'{metros} m/s são {km} km/h.')
 print('- '*30)
-'''
+
 print('12_ Leia uma distância em milhas e apresente-a convertida em quilômetros.')
 milhas = 300
 km = 1.61 * milhas
@@ -76,3 +76,24 @@ km = 480
 milhas = km / 1.61
 print(km, 'km')
 print(f'São {milhas:.2f} milhas.')
+print('- '*30)
+
+print('14_ Leia um ângulo em graus e apresente-o convertido em radianos.')
+graus = 345
+radianos = graus * (3.14/180)
+print(graus, 'graus')
+print(f'Equivalem a {radianos:.2f} graus radianos')
+print('- '*30)
+
+print('15_ Leia um ângulo em radianos e apresente-o convertido em graus')
+radiano = 6
+grau = radiano * (180/3.14)
+print(f'{radiano} graus radianos equivalem a {grau:.2f} graus.')
+print('- '*30)
+
+print('16_ Leia um valor de comprimento em polegadas e apresente-o convertido em centímetros.')
+polegada = 120
+centimetro = polegada * 2.54
+print(f'{polegada} " (polegadas) são {centimetro} centímetros.')
+print('- '*30)
+'''
