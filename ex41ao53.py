@@ -44,5 +44,32 @@ objetivo = float(input('\033[33mQual a altura que deseja alcançar com a escada,
 obj = objetivo * 100
 degrau = obj / altura
 print(f'Você precisará subir {degrau} degraus para atingir seu objetivo.')
-'''
+print('*'*30)
+
 print('45_ Faça um programa para converter uma letra maiúscula em letra minúscula. Use a tabela ASCII para resolver o problema.')
+print('*'*30)
+
+print('46_ Faça um programa que leia um número inteiro positivo de 3 dígitos (de 100 a 999). Gere outro número formado pelos dígitos invertidos do número lido.')
+n= 123
+print(type(n))
+n1 = str(n)
+print(type(n1))
+print(n1[::-1])
+print('*'*30)
+
+print('47_ Leia um número inteiro de 4 dígitos de (1000 a 9999) e imprima 1 dígito por linha.')
+numero = 4506
+numero = str(numero)
+for i in numero:
+    print(i)
+print('*'*30)
+
+print('48_ Leia um valor inteiro em segundos, e imprima-o em horas, minutos e segundos.')
+numero = 97200
+import datetime
+numero1 = datetime.timedelta(seconds = numero)
+print(numero1)
+print('*'*30)
+'''
+print('49_Faça um programa que leia o horário (hora, minuto e segundo) de início e duração, em segundos de uma experiência biológica. O programa deve resultar com o novo horário do término da mesma.') )
+
