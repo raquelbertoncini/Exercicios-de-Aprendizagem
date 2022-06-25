@@ -1,2 +1,3 @@
 # Exercicios de aprendizagem
-Exercícios de Aprendizagem
+## Cursos livres
+### Exercícios do Curso da Udemy: Python, do Básico ao Avançado.
