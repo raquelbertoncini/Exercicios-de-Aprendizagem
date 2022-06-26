@@ -70,6 +70,20 @@ import datetime
 numero1 = datetime.timedelta(seconds = numero)
 print(numero1)
 print('*'*30)
-'''
-print('49_Faça um programa que leia o horário (hora, minuto e segundo) de início e duração, em segundos de uma experiência biológica. O programa deve resultar com o novo horário do término da mesma.') )
 
+print('49_Faça um programa que leia o horário (hora, minuto e segundo) de início e duração, em segundos de uma experiência biológica. O programa deve resultar com o novo horário do término da mesma.')
+print('50_ Implemente um programa que calcule o ano de nascimento de uma pessoa a partir de sua idade e do ano atual.')
+idade = int(input('Digite a sua idade: '))
+import datetime
+hoje = datetime.date.today()
+ano = hoje.year
+ano = int(ano)
+nascimento = ano - idade
+print(f'Ano atual: {ano}')
+print(f'Ano do seu nascimento: {nascimento}')
+print('*'*30)
+'''
+print('51_ Escreva um programa que leia as coordenadas X e Y de pontos no R2 e calcule sua distância de origem.')
+#print('52_ Três amigos jogaram na loteria. Caso eles ganhem, o prêmio deve ser repartido proporcionalmente ao valor que cada um deu para a realização da aposta. Faça um programa que leia quanto cada apostador investiu, o valor do prêmio, e imprima quanto cada um ganharia do prêmio com base no valor investido.')
+#print('53_ Faça um programa para ler as dimensões de um terreno (comprimento e largura) bem como o preco do metro de tela. imprima o custo para cercar este mesmo terreno com tela.')
+#voltar no 45
