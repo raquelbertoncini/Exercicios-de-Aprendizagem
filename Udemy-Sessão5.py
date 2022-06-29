@@ -15,3 +15,11 @@ elif n > 0:
     print(f'A raiz quadrada de {n} é {n2:.2f}')
 '''
 print('3_ Leia um número real. Se o número for positivo imprima raiz quadrada. Do contrário, imprima o número ao quadrado.')
+n1 = float(input('Digite um número: '))
+import math
+if n1 > 0:
+    n2 = math.sqrt(n1)
+    print(f'A raiz quadrada de {n1} é {n2:.2f}.')
+elif n1 < 0:
+    n2 = n1**2
+    print(f'O quadrado de {n1} é {n2}.')
