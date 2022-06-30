@@ -61,5 +61,34 @@ if n1==n2:
     print('Eles são iguais!')
 else:
     print(f'O maior número é: {maior}.')
+print('-'*30)
+
+print('8_ Faça um programa que leia 2 notas de um aluno, verifique se as notas são válidas (valor entre 0.0 e 10.0) e exiba na tela a média destas notas.')
+print('Caso a nota não possua valor válido, este fato deve ser informado ao usuário, e o program termina.')
+n1 = float(input('Digite a primeira nota: '))
+n2 = float(input('Digite a segunda nota: '))
+if n1 > 10.0 or n1 < 0.0:
+    print(f'Nota {n1} inválida.')
+elif n2 > 10.0 or n2 < 0.0:
+    print(f'Nota {n2} inválida.')
+else:
+    media = (n1 + n2) / 2
+    print(f'A média das notas é {media}.')
+print('-'*30)
+
+print('9_ Leia o salário de um trabalhador e o valor da prestação de um empréstimo. Se a prestação for maior que 20% do salário, imprima: Empréstimo não concedido, caso contrário imprima Empréstimo concedido.')
+salario = float(input('Qual é o seu salário: R$ '))
+prestacao = float(input('Qual o valor da prestação: R$ '))
+teto = salario * 0.2
+if prestacao > teto:
+    print('O empréstimo não pode ser concedido porque ultrapassa 20% do total.')
+else:
+    print('Empréstimo concedido.')
+print('-'*30)
 '''
-# 8, 9, 10, 11, 12
+print('10_ Faça um programa que receba a altura e o sexo de uma pessoa e calcule e mostre o seu peso ideal.')
+sexo = input('Homem(h) ou mulher(m)? ').lower()
+altura = float(input('Digite sua altura em cm: '))
+if sexo == 'h':
+    
+#1, 12
