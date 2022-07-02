@@ -85,10 +85,50 @@ if prestacao > teto:
 else:
     print('Empréstimo concedido.')
 print('-'*30)
-'''
+
 print('10_ Faça um programa que receba a altura e o sexo de uma pessoa e calcule e mostre o seu peso ideal.')
 sexo = input('Homem(h) ou mulher(m)? ').lower()
-altura = float(input('Digite sua altura em cm: '))
+altura = float(input('Digite sua altura em metros: '))
 if sexo == 'h':
-    
-#1, 12
+    peso_ideal = (72.7 * altura) - 58
+    print(f'Seu peso ideal é de: {peso_ideal:.2f} kg.')
+elif sexo == 'm':
+    peso_ideal = (62.1 * altura) - 44.7
+    print(f'Seu peso ideal é de {peso_ideal:.2f} kg.')
+print('-'*30)
+
+print('11_ Escreva um programa que leia um número inteiro maior do que zero e devolva, a soma de todos os seus algarismos.')
+print('Se o número lido não for maior do que zero, o programa terminará com a mensagem: Número inválido.')
+n = int(input('Digite um número: '))
+soma = 0
+if n > 0:
+    for digit in str(n):
+        soma += int(digit)
+    print(soma)
+else:
+    print('Número inválido.')    
+print('-'*30)
+
+print('12_ Ler um número inteiro. Se o número lido for negativo, escreva a mensagem. "número inválido". Se o número for positivo, calcular o logaritmo dele.')
+n = int(input('Digite um número:'))
+import math
+if n < 0:
+    print('Número inválido.')
+else:
+    logaritmo = math.log(n)
+    print(f'O log de {n} é {logaritmo:.2f}.)
+print('-'*30)
+
+print('13_ Faça um algoritmo que calcule a média ponderada das 3 notas de 3 provas. A 1a e a 2a tem peso1, a 3a tem peso 2. Ao final, mostrar a média do aluno e indicar se foi aprovado (igual ou superior a 60) ou reprovado.')
+n1 = float(input('Insira a primeira nota: '))
+n2 = float(input('Insira a segunda nota: '))
+n3 = float(input('Insira a terceira nota: '))
+nota = n1 + n2 + (n3 * 2)
+media = nota / 4
+if media >= 60:
+    print(f'Sua média é de {media:.2f}, você foi aprovada.')
+elif media <= 60:
+    print(f'Sua média de {media:.2f} não foi suficiente. Você foi reprovada.')
+print('-'*30)
+'''
+print('14_ A nota final de um estudante é calculada a partir de 3 notas atribuídas entre o intervalo de 0 até 10, respectivamente, a um trabalho de laboratório, a uma avaliação semestral e a um exame final. A média das 3 notas mencionadas anteriormente obedece aos pesos: Trabalho de laboratório, 2; Avaliação Semestral, 3; Exame final, 5. De acordo com o resultado, mostre na tela se o aluno está reprovado (média entre 0 e 2.9), de recuperação (entre 3 e 4.9) ou se foi aprovado. Faça todas as verificações necessárias.')
