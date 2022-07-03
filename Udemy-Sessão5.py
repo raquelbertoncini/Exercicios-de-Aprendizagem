@@ -116,7 +116,7 @@ if n < 0:
     print('Número inválido.')
 else:
     logaritmo = math.log(n)
-    print(f'O log de {n} é {logaritmo:.2f}.)
+    print(f'O log de {n} é {logaritmo:.2f}.')
 print('-'*30)
 
 print('13_ Faça um algoritmo que calcule a média ponderada das 3 notas de 3 provas. A 1a e a 2a tem peso1, a 3a tem peso 2. Ao final, mostrar a média do aluno e indicar se foi aprovado (igual ou superior a 60) ou reprovado.')
@@ -130,5 +130,150 @@ if media >= 60:
 elif media <= 60:
     print(f'Sua média de {media:.2f} não foi suficiente. Você foi reprovada.')
 print('-'*30)
-'''
+
 print('14_ A nota final de um estudante é calculada a partir de 3 notas atribuídas entre o intervalo de 0 até 10, respectivamente, a um trabalho de laboratório, a uma avaliação semestral e a um exame final. A média das 3 notas mencionadas anteriormente obedece aos pesos: Trabalho de laboratório, 2; Avaliação Semestral, 3; Exame final, 5. De acordo com o resultado, mostre na tela se o aluno está reprovado (média entre 0 e 2.9), de recuperação (entre 3 e 4.9) ou se foi aprovado. Faça todas as verificações necessárias.')
+trab_laboratorio = float(input('Qual a nota do Trabalho de Laboratório? '))
+av_semestral = float(input('Qual a nota da Avaliação Semestral? '))
+exame_final = float(input('Qual a nota do Exame Final? '))
+nota = (trab_laboratorio * 2) + (av_semestral * 3) + (exame_final * 5)
+media = nota / 10
+if media < 3:
+    print(f'Sua média: {media:.2f}, você está reprovado.')
+elif 3 <= media  <5:
+    print(f'Sua média de {media:.2f} é suficiente para a recuperação.')
+elif media >= 5:
+    print(f'Parabéns! Você foi aprovado com média de {media:.2f}.')
+print('-'*30)
+
+print('15_ Usando switch, escreva um programa que leia um número inteiro entre 1 e 7 e imprima o dia da semana correspondente a este número. Isto é, domingo se 1, segunda se 2 e assim por diante.')
+dia = int(input('Digite um número entre 1 e 7:'))
+if dia == 1:
+    print('Domingo')
+elif dia == 2:
+    print('Segunda-feira.')
+elif dia == 3:
+    print('Terça-feira')
+elif dia == 4:
+    print('Quarta-feira')
+elif dia == 5:
+    print('Quinta-feira')
+elif dia == 6:
+    print('Sexta-feira')
+elif dia == 7:
+    print('Sábado')
+else:
+    print('Você não digitou uma opção válida.')
+print('-'*30)
+
+print('16_ Usando switch, escreva um programa que leia um número inteiro entre 1 e 12 e imprima o mês correspondente.')
+mes = int(input('Digite um número entre 1 e 12: '))
+if mes == 1:
+    print('Janeiro')
+elif mes == 2:
+    print('Fevereiro')
+elif mes == 3:
+    print('Março')
+elif mes == 4:
+    print('Abril')
+elif mes == 5:
+    print('Maio')
+elif mes == 6:
+    print('Junho')
+elif mes == 7:
+    print('Julho')
+elif mes == 8:
+    print('Agosto')
+elif mes == 9:
+    print('Setembro')
+elif mes == 10:
+    print('Outubro')
+elif mes == 11:
+    print('Novembro')
+elif mes == 12:
+    print('Dezembro')
+else:
+    print('Essa não é uma opção válida')
+print('-'*30)
+
+print('17_ Faça um programa que calcule e mostre a área de um trapézio.')
+base_maior = 35
+base_menor = 24
+altura = 18
+area = ((base_maior + base_menor) * altura) / 2
+print(f'Base maior {base_maior}, base menor {base_menor}, altura {altura} este trapézio tem área total de {area}')
+print('-'*30)
+
+print('18_ Faça um programa que mostre ao usuário um menu com 4 opções de operações matemáticas. O usuário escolhe uma das opções e o seu programa então pede 2 valores numéricos e realiza a operação, mostrando o resultado e saindo.')
+print('Escolha a operação matemática que deseja realizar:')
+operacao = input('Soma = S, Subtração = T, Adição = A, Multiplicação = M: ' ).upper()
+n1 = float(input('Digite o primeiro número: '))
+n2 = float(input('Digite o segundo número: '))
+if operacao == 'S':
+    soma = n1 + n2
+    print(f'Realizando a soma de {n1} e {n2}, temos como resultado: {soma}.')
+elif operacao == 'T':
+    sub1 = n1 - n2
+    sub2 = n2 - n1
+    sub = max(n1,n2) - min(n1, n2)
+    print(f'Subtraindo {n1} de {n2} temos: {sub1}.')
+    print(f'Mas se for {n2} de {n1}, teremos {sub2}.')
+    print(f'Mas se quiser a diferença do maior para o menor, o resultado é {sub}.')
+print('-'*30)
+
+print('19_ Faça um programa  para verificar se um determinado número inteiro é divisível por 3 ou por 5, mas nao simultaneamente pelos dois.')
+n = int(input('Digite seu número: '))
+if n % 3 == 0 and not (n % 5 == 0):
+    result = n / 3
+    print(f'Resultado: {result}. É divisível por 3.')
+elif n % 5 == 0 and not (n % 3 == 0):
+    result = n / 5
+    print(f'Resultado: {result}. É divisível por 5.')
+else:
+    print('e agora José?')
+print('-'*30)
+
+print('20_ Dados 3 valores, A B e C, verificar se eles podem ser valores dos lados de um triângulo e, se forem, se é um triângulo escaleno, equilátero ou isóscele considerando o seguinte: o comprimento de cada lado de um triângulo é menor do que a soma dos outros dois lados; chama-se equilátero o triângulo com 3 lados iguais; já o isósceles é aquele que tem o comprimento de dois lados iguais; recebe o nome de escaleno quando os 3 lados são difirentes.')
+l1 = int(input('Digite o valor 1: '))
+l2 = int(input('Digite o valor 2: '))
+l3 = int(input('Digite o valor 3: '))
+if l1 > (l2 + l3) or l2 > (l3 + l1) or l3 > (l2 + l1):
+    print('Isso não é um triângulo.')
+elif l1 == l2 == l3:
+    print('É um triângulo equilátero.')
+elif l1 == l2 or l2 == l3 or l1 == l3:
+    print('É um triângulo isósceles.')
+elif l1 != l2 != l3:
+    print('É um triângulo escaleno.')
+print('-'*30)
+
+print('21_ Escreva o menu de opções abaixo: Leia a opção do usuário e execute a operação escolhida. Escreva uma mensagem de erro se a opção for inválida.')
+print('Escolha a opção:')
+print('1 - Soma de 2 números.')
+print('2 - Diferença entre 2 números (maior pelo menor).')
+print('3 - Produto entre 2 números.')
+print('4 - Divisão entre 2 números (o denominador não pode ser zero).')
+opcao = int(input('OPÇÃO: '))
+if opcao > 4:
+    print('Você não digitou uma opção válida.')
+elif opcao == 1:
+    num1 = float(input('Qual o primeiro número? '))
+    num2 = float(input('Qual o segundo número? '))
+    print(num1 + num2)
+elif opcao == 2:
+    num1 = float(input('Qual o primeiro número? '))
+    num2 = float(input('Qual o segundo número? '))   
+    sub = max(num1, num2) - min(num1, num2)
+    print(sub)
+elif opcao == 3:
+    num1 = float(input('Qual o primeiro número? '))
+    num2 = float(input('Qual o segundo número? '))
+    print(num1 * num2)
+elif opcao == 4:
+    num1 = float(input('Qual o primeiro número? '))
+    num2 = float(input('Qual o segundo número? '))    
+    if num2 == 0:
+        print('o segundo número não pode ser zero.')
+    else:
+        print(num1 / num2)
+print('-'*30)
+'''
