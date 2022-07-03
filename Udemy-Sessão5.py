@@ -276,4 +276,52 @@ elif opcao == 4:
     else:
         print(num1 / num2)
 print('-'*30)
+
+print('22_ Leia a idade e o tempo de serviço de um trabalhador e escreva se ele pode ou não se aposentar. As condições de aposentadoria são: 1) ter pelo menos 65 anos; 2) ou ter trabalhado pelo menos 30 anos; 3) ou ter pelo menos 60 anos e trabalhado pelo menos 25 anos.)')
+idade = int(input('Qual a sua idade? '))
+tempo = int(input('Digite o tempo, em anos, trabalhado: '))
+if 65 > idade >= 60 and tempo >= 25:
+    print('Você pode se aposentar.')
+elif tempo == 30:
+    print('Você trabalho o tempo certo para ter a aposentaria concedida.')
+elif idade >=65:
+    print('Você tem a idade  para se aposentar.')
+else:
+    print('Você ainda nao pode se aposentar.')
+    print('-'*30)
+
+print('23_ Determine se um determinado ano lido é bissexto. Sendo que um ano é bissexto se for divisível por 400 ou se for divisível por 4 e nao for divisível por 100. ')
+# ano bissexto, é divisível por 4 mas não por 100 OU é divisível por 4, 100 e 400.
+ano = int(input('Entre com o ano: '))
+if ano % 4 == 0 and ano % 100!= 0:
+    print('É ano bissexto.')
+elif ano % 4 == 0 and ano % 100 == 0 and ano % 400 == 0:
+    print('É ano bissexto.')
+else:
+    print('Não é ano bissexto.')
+print('-'*30)
+
+print('24_ Uma empresa vende o mesmo produto para quatro diferentes estados. Cada estado possui uma faixa diferente de imposto sobre o protudo - MG 7%, SP 12%, RJ 15%, MS 8%. Faça um programa em que o usuário entre o valor e o estado destino do produto e o programa retorne o preço final do produto acrescido do imposto do estado em que ele será vendido. Se o estado digitado não for válido, mostrar uma mensagem de erro.')
+valor = float(input('Qual o valor do produto? R$ '))
+print('Minas Gerais = MG ;')
+print('São Paulo = SP ;')
+print('Rio de Janeiro = RJ ;')
+print('Mato Grosso do Sul = MS .')
+estado = input('Digite o estado de destino: ').upper()
+if estado == 'MG':
+    imposto = valor + (valor * 0.07)
+    print(f'Seu produto de R$ {valor} tem valor de venda de R$ {imposto:.2f} em Minas Gerais.')
+if estado == 'SP':
+    imposto = valor + (valor * 0.12)
+    print(f'Seu produto de R$ {valor} tem valor de venda de R$ {imposto:.2f} em São Paulo.')
+if estado == 'RJ':
+    imposto = valor + (valor * 0.15)
+    print(f'Seu produto de R$ {valor} tem valor de venda de R$ {imposto:.2f} no Rio de Janeiro.')
+if estado == 'MS':
+    imposto = valor + (valor * 0.08)
+    print(f'Seu produto de R$ {valor} tem valor de venda de R$ {imposto:.2f} em Mato Grosso do Sul.')
+else:
+    print('Esta não é uma opção válida.')
+print('-'*30)
 '''
+print('25_ ')
