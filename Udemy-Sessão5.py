@@ -323,5 +323,45 @@ if estado == 'MS':
 else:
     print('Esta não é uma opção válida.')
 print('-'*30)
-'''
+
 print('25_ ')
+print('26_ Leia a distância em Km e a quantidade de litros de gasolina consumidos por um carro em um percurso, calcule o consumo em Km/l e escreva uma mensagem de acordo com a tabela abaixo.')
+print('consumo: menor que 8km/l - venda o carro')
+print('consumo entre 8 e 12 km/l - econômico')
+print('consumo maior que 13 km/l - super econômico.')
+km = float(input('Digite a distância percorrida em km: '))
+litro = float(input('Quantidade de litros de gasolina consumida: '))
+consumo = km / litro
+if consumo < 8:
+    print(f'Seu carro faz {consumo:.2f}km/l, VENDA O CARRO!')
+elif 8>= consumo <=12:
+    print(f'Seu carro faz {consumo:.2f}km/l, ele é ECONÔMICO.')
+elif consumo >=13:
+    print(f'Seu carro é SUPER ECONÔMICO! Faz {consumo:.2f}km/l.')
+print('-'*30)
+
+print('27_ Escreva um programa que, dada a idade de um nadador, classifique-o em uma das seguintes categorias.')
+print('CATEGORIA INFANTIL A, INFANTIL B, JUVENIL A, JUVENIL B, SÊNIOR.')
+print('IDADE: 5 A 7, 8 A 10, 11 A 13, 14 A 17, MAIORES DE 18 ANOS.')
+idade = int(input('Digite a idade da pessoa nadadora: '))
+if idade >= 5 and idade <=7:
+    print('Você está na categoria INFANTIL A.')
+elif idade >= 8 and idade <= 10:
+    print('Você está na categoria  INFANTIL B.')
+elif idade >= 11 and idade <= 13:
+    print('Você está na categoria JUVENIL A.')
+elif idade >= 14 and idade <= 17:
+    print('Você está na categoria JUVENIL B.')
+elif idade >= 18:
+    print('Você já faz parte da categoria SÊNIOR.')
+print('-'*30)
+'''
+print('28_ Faça um programa que leia 3 números inteiros positivos e efetue o cálculo de uma das seguintes médias de acordo com um valor numérico digitado pelo usuário.')
+n1 = float(input('Digite o 1o número, de um total de 3: '))
+n2 = float(input('Digite o 2o número, de um total de 3: '))
+n3 = float(input('Digite o 3o número, de um total de 3: '))
+print('(A) Média Geométrica \n'
+       '(B) Média Ponderada \n'
+       '(C) Média Harmônica \n'
+       '(D) Média Aritmética')
+
