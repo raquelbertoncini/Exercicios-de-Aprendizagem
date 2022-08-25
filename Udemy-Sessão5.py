@@ -355,13 +355,67 @@ elif idade >= 14 and idade <= 17:
 elif idade >= 18:
     print('Você já faz parte da categoria SÊNIOR.')
 print('-'*30)
-'''
+
+import math
 print('28_ Faça um programa que leia 3 números inteiros positivos e efetue o cálculo de uma das seguintes médias de acordo com um valor numérico digitado pelo usuário.')
-n1 = float(input('Digite o 1o número, de um total de 3: '))
-n2 = float(input('Digite o 2o número, de um total de 3: '))
-n3 = float(input('Digite o 3o número, de um total de 3: '))
+n1 = int(input('Digite o 1o número, de um total de 3: '))
+n2 = int(input('Digite o 2o número, de um total de 3: '))
+n3 = int(input('Digite o 3o número, de um total de 3: '))
 print('(A) Média Geométrica \n'
        '(B) Média Ponderada \n'
        '(C) Média Harmônica \n'
        '(D) Média Aritmética')
+opcao = input('Qual média deseja calcular? ').upper()
+if opcao == 'A':
+    r = n1 * n2 * n3
+    r1 = math.pow(r, 1.0/3.0)
+    print(f'A média geométrica é {r1:.2f}')
+elif opcao == 'B':
+    r = (n1 + 2 * n2 + 3 * n3) / 6
+    print(f'A média ponderada é {r:.2f}')
+elif opcao == 'C':
+    r1 = (1/n1) + (1/n2) + (1/n3)
+    r = 1 / r1
+    print(f'A média harmônica é {r:.2f}')
+elif opcao == 'D':
+    r = (n1 + n2 + n3) / 3
+    print(f'A média aritmética é {r:.2f}')
+else:
+    print('Essa não é uma opção válida.')
+print('-'*30)
 
+
+print("29_ Faça uma prova de matemática para crianças que estão aprendendo a somar números inteiros menores do que 100. Escolha números aleatórios entre 1 e 100, e mostre na tela a pergunta: 'Qual a soma de a + b?' onde a e b são os números aleatórios. Peça a resposta, faça cinco perguntas ao aluno, e mostre para ele as perguntas e as respostas corretas, além de quantas vezes o aluno acertou.")
+from random import randint
+
+def soma(a, b):
+    return a+ b
+
+i = 0
+acertos = 0
+while i < 5:
+    n1 = randint(0, 100)
+    n2 = randint(0,100)
+    print(n1, n2)
+    r = int(input('Qual o resultado da soma dos números? '))
+    i += 1
+    if r == soma(n1, n2):
+        acertos += 1
+        print('Você acertou!')
+    else:
+        print('Não foi dessa vez.')
+        print(f'O resultado é {soma(n1, n2)}')
+
+print(f'Você acertou {acertos} perguntas!')
+print('-'*30)
+
+print('30_ Faça um programa que receba 3 números e mostre-os em ordem crescente.')
+n1 = int(input('Número 1: '))
+n2 = int(input('Número 2: '))
+n3 = int(input('Número 3: '))
+n = [n1, n2, n3]
+n.sort()
+print(f'Seus números em ordem crescente: {n}.')
+print('-'*30)
+'''
+print('31_ Faça um programa que receba a altura e o peso de uma pessoa. De acordo com a tabela a seguir, verifique e mostre qual a classificação dessa pessoa.')
