@@ -417,5 +417,60 @@ n = [n1, n2, n3]
 n.sort()
 print(f'Seus números em ordem crescente: {n}.')
 print('-'*30)
-'''
+
 print('31_ Faça um programa que receba a altura e o peso de uma pessoa. De acordo com a tabela a seguir, verifique e mostre qual a classificação dessa pessoa.')
+altura = float(input('Digite a sua altura em metros: '))
+peso = float(input('Qual o seu peso em kg? '))
+if altura <= 1.20 and peso < 60:
+        print('Classificação A')
+elif altura <= 1.20 and 60 <= peso <= 90:
+        print('Classificação D')
+elif altura <=1.20 and  peso > 90:
+        print('Classificação G')
+elif 1.20 < altura <= 1.70 and peso < 60:
+        print('Classificação B')
+elif 1.20 < altura <= 1.70 and 60 <= peso <= 90:
+        print('Classificação E')
+elif 1.20 < altura <= 1.70 and peso > 90:
+        print('Classificação H')
+elif altura > 1.70 and peso < 60:
+        print('Classificação C')
+elif altura > 1.70 and 60 <= peso <= 90:
+        print('Classificação F')
+elif altura > 1.70 and peso > 90:
+        print('Classificação I')
+else:
+        print('Ops, algo deu errado')
+print('-'*30)
+
+print('32_ Escrever um programa que leia o código do produto escolhido do cardápio de uma lanchonete e a quantidade. O programa deve calcular o valor a ser pago por aquele lanche. Considere que a cada execução somente será calculado um pedido. O cardápio da lanchonete segue o padrão:\n'
+'----------------------------------\n'
+'Especificação  |  código  | preço\n'
+'cachorro quente|   100    |  1.20\n'
+'bauru simples  |   101    |  1.30\n'
+'bauru com ovo  |   102    |  1.50\n'
+'hamburguer     |   103    |  1.20\n'
+'cheeseburguer  |   104    |  1.70\n'
+'suco           |   105    |  2.20\n'
+'refrigerante   |   106    |  1.00\n'
+'----------------------------------')
+codigo = int(input('Digite o código do pedido: '))
+quanti = int(input('Qual a quantidade? '))
+cardapio = {100: 'cachorro quente', 101: 'bauru simples', 102: 'bauru com ovo', 103:'hamburguer', 104: 'cheeseburguer', 105: 'suco', 106: 'refrigerante'}
+preco = {100: 1.20, 101: 1.30, 102: 1.50, 103: 1.20, 104: 1.70, 105: 2.20, 106: 1.00}
+print(f' Você pediu {quanti} {cardapio[codigo]}, valor total de R$ {quanti * preco[codigo]}.')
+print('-'*30)
+'''
+print('33_ Um produto vai sofrer aumento de acordo com a tabela abaixo. Leia o preço antigo, calcule e escreva o preço novo, e escreva uma mensagem em função do preço novo (de acordo com a segunda tabela).\n'
+'______________________________________________________\n'
+'PREÇO ANTIGO               |   PERCENTUAL DE AUMENTO\n'
+'até R$ 50,00               |           5%\n'
+'entre R$ 50,00 e R$ 100,00 |           10%\n'
+'acima de R$ 100,00         |           15%\n'
+'------------------------------------------------------\n'
+'           PREÇO NOVO                 |    MENSAGEM\n'
+'           até R$ 80,00               |  Barato\n'
+'entre R$ 80,00 e R$ 120,00(inclusive) |  Normal\n'
+'entre R$ 120,00 e R$ 200,00(inclusive |  Caro\n'
+'         acima de R$ 200,00           |  Muito caro\n'
+'------------------------------------------------------')
