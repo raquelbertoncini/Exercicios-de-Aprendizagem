@@ -460,7 +460,7 @@ cardapio = {100: 'cachorro quente', 101: 'bauru simples', 102: 'bauru com ovo', 
 preco = {100: 1.20, 101: 1.30, 102: 1.50, 103: 1.20, 104: 1.70, 105: 2.20, 106: 1.00}
 print(f' Você pediu {quanti} {cardapio[codigo]}, valor total de R$ {quanti * preco[codigo]}.')
 print('-'*30)
-'''
+
 print('33_ Um produto vai sofrer aumento de acordo com a tabela abaixo. Leia o preço antigo, calcule e escreva o preço novo, e escreva uma mensagem em função do preço novo (de acordo com a segunda tabela).\n'
 '______________________________________________________\n'
 'PREÇO ANTIGO               |   PERCENTUAL DE AUMENTO\n'
@@ -474,3 +474,225 @@ print('33_ Um produto vai sofrer aumento de acordo com a tabela abaixo. Leia o p
 'entre R$ 120,00 e R$ 200,00(inclusive |  Caro\n'
 '         acima de R$ 200,00           |  Muito caro\n'
 '------------------------------------------------------')
+preco = float(input('Qual o preço do produto? R$ '))
+
+def preco_novo(novo):
+    if novo <= 80:
+        return "Está barato"
+    elif 80 < novo <= 120:
+        return 'Está normal'
+    elif 120 < novo <= 200:
+        return 'Está caro'
+    elif novo > 200:
+        return 'Está muito caro'
+
+if preco < 50:
+    novo = preco + (preco * 0.05)
+    print(f'O novo preço é {novo:.2f}')
+    print(preco_novo(novo))
+
+elif 50 <= preco < 100:
+    novo = preco + (preco * 0.1)
+    print(f'O novo preço é {novo:.2f}')
+    print(preco_novo(novo))
+
+elif preco >= 100:
+    novo = preco + (preco * 0.15)
+    print(f'O novo preço é {novo:.2f}')
+    print(preco_novo(novo))
+print('-'*30)
+
+print('34_ Leia a nota e o número de faltas de um aluno, e escreva seu conceito. De acordo com a tabela abaixo, quando o aluno tem mais e 20 faltas ocorre uma redução de conceito.\n'
+'   NOTA           CONCEITO        CONCEITO\n'
+'            (até 20 faltas) (mais de 20 faltas)\n'
+'-----------------------------------------------\n'
+'9.0 até 10.0       A               B\n'
+'7.5 até 8.9        B               C\n'
+'5.0 até 7.4        C               D\n'
+'4.0 até 4.9        D               E\n'
+'0.0 até 3.9        E               E')
+nota = float(input('Digite a nota do aluno: '))
+faltas = int(input('Quantidade de faltas: '))
+
+if 0.0 < nota < 4.0:
+    print('Conceito E')
+elif 4 <=  nota < 5:
+    if faltas <= 20:
+        print('Conceito D')
+    else:
+        print('Conceito E')
+elif 5 <=  nota < 7.5:
+    if faltas <= 20:
+        print('Conceito C')
+    else:
+        print('Conceito D')
+elif 7.5 <=  nota < 9.0:
+    if faltas <= 20:
+        print('Conceito B')
+    else:
+        print('Conceito C')
+elif 9 <=  nota <= 10.0:
+    if faltas <= 20:
+        print('Conceito A')
+    else:
+        print('Conceito B')
+print('-'*30)
+
+print('35_ Leia uma data e determine se ela é válida. Ou seja, verifique se o mês está entre 1 e 12, e se o dia existe naquele mês. Note que fevereiro tem 29 dias em anos bissextos, e 28 dias em anos não bissextos.')
+print('-'*30)
+
+print('36_ Escreva um programa que, dado o valor da venda, imprima a comissão que deverá ser paga ao vendedor. Para calcular a comissão, considere a tabela abaixo:\n'
+'                   VENDA MENSAL                                    COMISSÃO\n'
+'-------------------------------------------------------------------------------------\n'
+'Maior ou igual a R$ 100.000,00                             R$ 700,00 + 16% das vendas\n'
+'Menor que R$ 100.000,00 e maior ou igual a R$ 80.000,00    R$ 650,00 + 14% das vendas\n'
+'Menor que R$ 80.000,00 e maior ou igual a R$ 60.000,00     R$ 600,00 + 14% das vendas\n'
+'Menor que R% 60.000,00 e maior ou igual a R$ 40.000,00     R$ 550,00 + 14% das vendas\n'
+'Menor que R$ 40.000,00 e maior ou igual a R$ 20.000,00     R$ 500,00 + 14% das vendas\n'
+'Menor que R$ 20.000,00                                     R$ 400,00 + 14% das vendas\n'
+'-------------------------------------------------------------------------------------')
+venda = float(input('Digite o valor total das vendas: R$ '))
+
+if venda >= 100000:
+    p = venda * 0.16
+    comissao = 700 + p
+elif 80000 <= venda < 100000:
+    p = venda * 0.14
+    comissao = 650 + p
+elif 60000 <= venda < 80000:
+    p = venda * 0.14
+    comissao = 600 + p
+elif 40000 <= venda < 60000:
+    p = venda * 0.14
+    comissao = 550 + p
+elif 20000 <= venda < 40000:
+    p = venda * 0.14
+    comissao = 500 + p
+elif venda < 20000:
+    p = venda * 0.14
+    comissao = 400 + p
+
+print(f' Valor total a receber de comissão: R$ {comissao:.2f}')
+print('-'*30)
+
+print('37_ As tarifas de certo parque de estacionamento são as seguintes:\n'
+'1a e 2a hora       | R$ 1,00 cada\n'
+'3a e 4a hora       | R$ 1,40 cada\n'
+'5a hora e seguintes| R$ 2,00 cada\n'
+'O número de horas a pagar é sempre inteiro e arredondado por excesso. Deste modo, quem estacionar durante 61 minutos pagará por duas horas, que é o mesmo de quem permanecer por 120 minutos. Os momentos de chegada ao parque e partida deste são apresentados na forma de pares de inteiros, representando horas e minutos. Por exemplo, o par 12 50 representará "dez para a uma da tarde". Pretende-se criar um programa que, lidos pelo teclado os momentos de chegada e de partida, escreva na tela o preço cobrado pelo estacionamento. Admite-se que a chegada e a partida se dão com intervalo não superior a 24 horas. Portanto, se uma dada hora de chegada for superior à da partida, isso não é uma situação de erro, antes significará que a partida ocorreu no dia seguinte ao da chegada.')
+print('-'*30)
+
+print('38_ Leia uma data de nascimento de uma pessoa fornecida através de três números inteiros: Dia, Mês e Ano. Teste a validade desta data para saber se esta é uma data válida. Teste se o dia fornecido é um dia válido: dia > 0, dia <=28 para o mês de fevereiro (29 se o ano for bissexto), dia <=30 em abril, junho, setembro e novembro, dia <=31 nos outros meses. Teste a validade do mês: mês > 0 e mês <13. Teste a validade do ano: ano <= ano atual(use uma constante definida com o valor igual a 2008. Imprimir: "data válida" ou "data inválida" no final da execução do programa.')
+dia = int(input('Digite o dia de nascimento: '))
+mes = int(input('Digite o mês de nascimento: '))
+ano = int(input('Digite o ano de nascimento: '))
+
+if mes in [1, 3, 5, 7, 8, 10, 12]:
+    if 0 < dia <= 31:
+        print('Data válida')
+        idade = 2022 - ano
+    else:
+        print('Não é uma data válida')
+    print(f'Você tem {idade} anos.')
+
+elif mes in [4, 6, 9, 11]:
+    if 0 < dia <= 30:
+        print('Data válida')
+        idade = 2022 - ano
+    else:
+        print('Não é uma data válida')
+    print(f'Você tem {idade} anos.')
+
+elif mes == 2:
+    if 0 < dia <= 28:
+        print('Data válida')
+        idade = 2022 - ano
+    elif dia == 29:
+        print('Data válida! Ano bissexto')
+    else:
+        print('Não é uma data válida')
+    print(f'Você tem {idade} anos.')
+print('-'*30)
+
+print('39_ Uma empresa decide dar um aumento aos seus funcionários de acordo com uma tabela que considera o salário atual e o tempo de serviço de cada funcionário. Os funcionários com menor salário terão um aumento proporcionalmente maior do que os funcionários com um salário maior, conforme o tempo de serviço na empresa, cada funcionário irá receber um bônus adicional de salário. Faça um programa que leia:\n'
+'- o valor do salário atual do funcionário\n'
+'- o tempo de serviço desse funcionário na empresa (número de anos de trabalho na empresa)\n'
+'Use as tabelas abaixo para calcular o salário reajustado deste funcionário e imprima o valor do salário final reajustado, ou uma mensagem caso o funcionário não tenha direito a nenhum aumento.\n'
+'_____________________________________________________________\n'
+'SALÁRIO ATUAL      REAJUSTE    TEMPO DE SERVIÇO    BÔNUS\n'
+'até 500,00             25%     abaixo de 1 ano     sem bônus\n'
+'até 1000,00            20%     de 1 a 3 anos       100,00\n'
+'até 1500,00            15%     de 4 a 6 anos       200,00\n'
+'até 2000,00            10%     de 7 a 10 anos      300,00\n'
+'acima de 2000,00   s/reajuste  mais de 10 anos     500,00\n'
+'_____________________________________________________________')
+salario = float(input('Digite o salário atual: R$ '))
+tempo = int(input('Qual o tempo de serviço(em anos): '))
+
+def bonus(tempo):
+    if 1 <= tempo <= 3:
+        return(f'Você tem direito a R$ 100,00 de bônus pelos seus {tempo} anos de trabalho.')
+    elif 4 <= tempo <= 6:
+        return(f'Você tem direito a R$ 200,00 de bônus pelos seus {tempo} anos de trabalho.')
+    elif 7 <= tempo <= 10:
+        return(f'Você tem direito a R$ 300,00 de bônus pelos seus {tempo} anos de trabalho.')
+    elif tempo > 10:
+        return(f'Você tem direito a R$ 500,00 de bônus pelos seus {tempo} anos de trabalho.')
+    else:
+        return('Você não tem direito ao bônus.')
+
+if salario <= 500.00:
+    r = salario * 0.25
+    novo = salario + r
+    print(f'Reajuste de R$ {r:.2f}, seu novo salário R$ {novo:.2f}')
+    print(bonus(tempo))
+
+elif salario <= 1000.00:
+    r = salario * 0.20
+    novo = salario + r
+    print(f'Reajuste de R$ {r:.2f}, seu novo salário R$ {novo:.2f}')
+    print(bonus(tempo))
+
+elif salario <= 1500.00:
+    r = salario * 0.15
+    novo = salario + r
+    print(f'Reajuste de R$ {r:.2f}, seu novo salário R$ {novo:.2f}')
+    print(bonus(tempo))
+
+elif salario <= 2000.00:
+    r = salario * 0.10
+    novo = salario + r
+    print(f'Reajuste de R$ {r:.2f}, seu novo salário R$ {novo:.2f}')
+    print(bonus(tempo))
+
+elif salario > 2000.00:
+    print('Você não tem direito ao reajuste.')
+    print(bonus(tempo))
+
+print('-'*30)
+'''
+print('40_ O custo ao consumidor de um carro novo é a soma do custo de fábrica, da comissão do distribuidor, e dos impostos. A comissão e os impostos são calculados sobre o custo de fábrica, de acordo com a tabela abaixo. Leia o custo de fábrica e escreva o custo ao consumidor.')
+print('CUSTO DE FÁBRICA                      % DO DISTRIBUIDOR      % DOS IMPOSTOS\n'
+'até R$ 12.000,00                               5                   isento\n'
+'entre R$ 12.000,00 e R$ 25.000,00              10                  15\n'
+'acima de R$ 25.000,00                          15                  20')
+custo = float(input('Qual o custo de fábrica do veículo? R$ '))
+
+def impostos():
+    if custo <= 12000:
+        print('Isento de impostos')
+    elif 12000 < custo <= 25000:
+        imposto = custo * 0.15
+        return(imposto)
+    elif custo > 25000:
+        imposto = custo * 0.20
+        return(imposto)
+
+if custo <= 12000:
+    comissao = float(custo * 0.05)
+    imposto = (impostos())
+    venda = custo + comissao + imposto
+    print(f'O preço de venda para o consumidor será de R$ {venda}')
+
+
+
