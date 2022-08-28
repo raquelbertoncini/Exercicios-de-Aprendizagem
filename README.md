@@ -1,4 +1,17 @@
 # Exercícios de aprendizagem
 ## Cursos livres - PYTHON
 Exercícios do Curso da Udemy: Python, do Básico ao Avançado - 
-Exercícios do 1 ao 53 - sobre tipos de variáveis.
+Temas abordados:
+
+* Variáveis e tipos de dados em Python
+* Estruturas lógicas e condicionais
+* Estruturas de repetição
+
+**Coleções
+
+**Funções
+
+**Orientação a objetos
+
+**Herança e Polimorfismo
+
