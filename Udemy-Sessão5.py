@@ -1,4 +1,4 @@
-print('1_ Faça um programa que receba dois números e mostre qual deles é o maior.')
+'''print('1_ Faça um programa que receba dois números e mostre qual deles é o maior.')
 n1 = int(input('Digite o primeiro número: '))
 n2 = int(input('Digite o segundo número: '))
 num = [n1, n2]
@@ -727,3 +727,4 @@ elif 35.0 <= imc <= 39.9:
 elif imc >= 40.0:
     print(f'{imc:.2f}')
     print('Obesidade grau III(mórbida)')
+'''
