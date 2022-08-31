@@ -1,4 +1,4 @@
-'''print('1_ Faça um programa que receba dois números e mostre qual deles é o maior.')
+print('1_ Faça um programa que receba dois números e mostre qual deles é o maior.')
 n1 = int(input('Digite o primeiro número: '))
 n2 = int(input('Digite o segundo número: '))
 num = [n1, n2]
@@ -670,7 +670,7 @@ elif salario > 2000.00:
     print(bonus(tempo))
 
 print('-'*30)
-'''
+
 print('40_ O custo ao consumidor de um carro novo é a soma do custo de fábrica, da comissão do distribuidor, e dos impostos. A comissão e os impostos são calculados sobre o custo de fábrica, de acordo com a tabela abaixo. Leia o custo de fábrica e escreva o custo ao consumidor.')
 print('CUSTO DE FÁBRICA                      % DO DISTRIBUIDOR      % DOS IMPOSTOS\n'
 'até R$ 12.000,00                               5                   isento\n'
@@ -678,21 +678,52 @@ print('CUSTO DE FÁBRICA                      % DO DISTRIBUIDOR      % DOS IMPOS
 'acima de R$ 25.000,00                          15                  20')
 custo = float(input('Qual o custo de fábrica do veículo? R$ '))
 
-def impostos():
-    if custo <= 12000:
-        print('Isento de impostos')
-    elif 12000 < custo <= 25000:
-        imposto = custo * 0.15
-        return(imposto)
-    elif custo > 25000:
-        imposto = custo * 0.20
-        return(imposto)
-
 if custo <= 12000:
-    comissao = float(custo * 0.05)
-    imposto = (impostos())
+    comissao = custo * 0.05
+    venda = custo + comissao
+    print(f'Isento de impostos. Custo ao consumidor: R$ {venda:.2f}')
+
+elif 12000 < custo <= 25000:
+    comissao = custo * 0.10
+    imposto = custo * 0.15
     venda = custo + comissao + imposto
-    print(f'O preço de venda para o consumidor será de R$ {venda}')
+    print(f'Imposto: R$ {imposto:.2f},\nComissão: R$ {comissao:.2f},\nCusto ao consumidor: R$ {venda:.2f}')
 
+elif custo > 25000:
+    comissao = custo * 0.15
+    imposto = custo * 0.20
+    venda = custo + comissao + imposto
+    print(f'Imposto: R$ {imposto:.2f},\nComissão: R$ {comissao:.2f},\nCusto ao consumidor: R$ {venda:.2f}')
+else:
+    print('Aqui podemos ver algum retorno de erro do Python')
+print('-'*30)
 
-
+print('41_ Faça um algoritmo que calcule o IMC de uma pessoa e mostre sua classificação de acordo com a tabela abaixo:\n'
+'IMC            CLASSIFICAÇÃO\n'
+'< 18,5         Abaixo do peso\n'
+'18.6 - 24.9    Saudável\n'
+'25.0 - 29.9    Peso em excesso\n'
+'30.0 - 34.9    Obesidade grau I\n'
+'35.0 - 39.9    Obesidade grau II (severa)\n'
+'>= 40.0        Obesidade grau III (mórbida)')
+peso = float(input('Digite o peso em kg: '))
+alt = float(input('Digite a altura em metros: '))
+imc = peso / (alt  **2)
+if imc < 18.5:
+    print(f'{imc:.2f}')
+    print('Abaixo do peso')
+elif 18.6 <=imc <= 24.9:
+    print(f'{imc:.2f}')
+    print('Saudável')
+elif 25.0 <= imc <= 29.9:
+    print(f'{imc:.2f}')
+    print('Peso em excesso')  
+elif 30.0 <= imc <= 34.9:
+    print(f'{imc:.2f}')
+    print('Obesidade grau I')
+elif 35.0 <= imc <= 39.9:
+    print(f'{imc:.2f}')
+    print('Obesidade grau II(severa)')
+elif imc >= 40.0:
+    print(f'{imc:.2f}')
+    print('Obesidade grau III(mórbida)')
