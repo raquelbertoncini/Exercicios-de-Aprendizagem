@@ -6,14 +6,20 @@ print('Faça programas para calcular as seguintes sequências:\n'
 n = int(input('Digite o número final:  '))
 
 #sequencia 1
-# falta 
 
+soma1 = 0
 
+for num in range(1, n+1):
+    soma1 += num
+
+print(f'A soma do exercício 1 é: {soma1}')
 
 
 #sequencia 2
+
 somaimpar = 0
 somapar = 0
+
 for num in range (1, n+1):
     if num % 2 == 0:
         somapar += num
@@ -24,11 +30,12 @@ soma2 = somaimpar - somapar
 print(f'A soma do exercício 2 é: {soma2}')
 
 #sequencia 3
-sequencia3 = []
+
+soma3 = 0
 
 for num in range(1, n+1, 2):
-    sequencia3.append(num)
-print(f'A sequência é : {sequencia3}')
+    soma3 += num
+print(f'A soma da sequência 3 é: {soma3}')
 
 
 
